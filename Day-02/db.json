@@ -1,0 +1,164 @@
+{
+  "users": [
+    {
+        "id": 1,
+        "name": "Daniel Johnson",
+        "username": "daniel67",
+        "email": "daniel67@example.com",
+        "country": "Germany",
+        "isActive": true
+    },
+    {
+        "id": 2,
+        "name": "Daniel Jones",
+        "username": "daniel64",
+        "email": "daniel64@mail.com",
+        "country": "United States",
+        "isActive": true
+    },
+    {
+        "id": 3,
+        "name": "Michael Garcia",
+        "username": "michael86",
+        "email": "michael86@example.com",
+        "country": "Germany",
+        "isActive": true
+    },
+    {
+        "id": 4,
+        "name": "James Jones",
+        "username": "james13",
+        "email": "james13@demo.net",
+        "country": "United States",
+        "isActive": false
+    },
+    {
+        "id": 5,
+        "name": "James Garcia",
+        "username": "james84",
+        "email": "james84@mail.com",
+        "country": "Canada",
+        "isActive": false
+    },
+    {
+        "id": 6,
+        "name": "Robert Brown",
+        "username": "robert90",
+        "email": "robert90@example.com",
+        "country": "Germany",
+        "isActive": false
+    },
+    {
+        "id": 7,
+        "name": "Jennifer Williams",
+        "username": "jennifer80",
+        "email": "jennifer80@example.com",
+        "country": "Canada",
+        "isActive": true
+    },
+    {
+        "id": 8,
+        "name": "Emily Rodriguez",
+        "username": "emily74",
+        "email": "emily74@demo.net",
+        "country": "France",
+        "isActive": true
+    },
+    {
+        "id": 9,
+        "name": "Daniel Garcia",
+        "username": "daniel60",
+        "email": "daniel60@test.org",
+        "country": "Canada",
+        "isActive": false
+    },
+    {
+        "id": 10,
+        "name": "Michael Rodriguez",
+        "username": "michael18",
+        "email": "michael18@demo.net",
+        "country": "United Kingdom",
+        "isActive": false
+    },
+    {
+        "id": 11,
+        "name": "Michael Wilson",
+        "username": "michael27",
+        "email": "michael27@demo.net",
+        "country": "Germany",
+        "isActive": false
+    },
+    {
+        "id": 12,
+        "name": "Jessica Johnson",
+        "username": "jessica74",
+        "email": "jessica74@demo.net",
+        "country": "Germany",
+        "isActive": true
+    },
+    {
+        "id": 13,
+        "name": "Jennifer Miller",
+        "username": "jennifer71",
+        "email": "jennifer71@test.org",
+        "country": "United States",
+        "isActive": false
+    },
+    {
+        "id": 14,
+        "name": "Robert Jones",
+        "username": "robert20",
+        "email": "robert20@mail.com",
+        "country": "Germany",
+        "isActive": true
+    },
+    {
+        "id": 15,
+        "name": "James Johnson",
+        "username": "james57",
+        "email": "james57@mail.com",
+        "country": "Germany",
+        "isActive": false
+    },
+    {
+        "id": 16,
+        "name": "Daniel Wilson",
+        "username": "daniel27",
+        "email": "daniel27@demo.net",
+        "country": "Canada",
+        "isActive": true
+    },
+    {
+        "id": 17,
+        "name": "Jessica Wilson",
+        "username": "jessica37",
+        "email": "jessica37@mail.com",
+        "country": "France",
+        "isActive": true
+    },
+    {
+        "id": 18,
+        "name": "Jessica Smith",
+        "username": "jessica42",
+        "email": "jessica42@mail.com",
+        "country": "Canada",
+        "isActive": true
+    },
+    {
+        "id": 19,
+        "name": "Sarah Garcia",
+        "username": "sarah87",
+        "email": "sarah87@test.org",
+        "country": "Australia",
+        "isActive": true
+    },
+    {
+        "id": 20,
+        "name": "Sarah Wilson",
+        "username": "sarah47",
+        "email": "sarah47@test.org",
+        "country": "Australia",
+        "isActive": true
+    }
+]
+}
