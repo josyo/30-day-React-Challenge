@@ -1,0 +1,243 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Claude / Soft Minimalist Palette */
+  --bg-app: #fbfaf7;          /* Soft, warm off-white background */
+  --bg-card: #ffffff;         /* Pure crisp white for the surface */
+  --border-subtle: #e6e4dd;   /* Soft warm grey border */
+  --border-focus: #d1cdb8;    /* Slightly darker bone-grey for active states */
+  
+  --text-main: #191919;       /* Deep charcoal instead of harsh black */
+  --text-muted: #6e6d65;      /* Slate tint for labels and captions */
+  
+  --accent-soft: #f4f0e6;     /* Warm tan tint for badges */
+  --accent-text: #6b5a3e;     /* Subdued gold/brown for contrast */
+  --btn-bg: #e2ded4;          /* Soft tactile button color */
+  --btn-hover: #d7d2c7;
+
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App Layout Container */
+.app-layout {
+  width: 100%;
+  max-width: 440px;
+  padding: 2rem 1.25rem;
+}
+
+.app-header h1 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Premium Soft Card Card */
+.card-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(25, 25, 25, 0.02), 
+              0 1px 3px rgba(25, 25, 25, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Profile / Identity Area */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px; /* Soft squircle */
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent-text);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.profile-name {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.25rem 0;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* Typography Blocks */
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+}
+
+.goal-text {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin: 0;
+  font-family: Georgia, serif; /* Soft literary touch typical of modern editorial tools */
+  font-style: italic;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 0;
+}
+
+/* Tracker Interface */
+.tracker-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter-text {
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--text-main);
+  background: #fdf6e2; /* Warm amber highlight tint */
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.btn-counter {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.btn-counter:hover {
+  background: var(--bg-app);
+  border-color: var(--border-focus);
+}
+
+/* Skills Layout */
+.skills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.count-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  font-size: 0.85rem;
+  background: var(--bg-app);
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  color: var(--text-main);
+}
+
+/* Modern Input Controls */
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-input {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.skill-input:focus {
+  border-color: var(--border-focus);
+  background: var(--bg-app);
+}
+
+.skill-input::placeholder {
+  color: #b2b0a5;
+}
+
+.btn-primary {
+  background: var(--btn-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(0.5px);
+}
