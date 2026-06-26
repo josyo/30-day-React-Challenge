@@ -8,12 +8,13 @@ export function AddEmployeeForm({ onAddEmployee }: AddEmployeeFormProps) {
   const [phone, setPhone] = useState('')
   const [city, setCity] = useState('')
   const [companyName, setCompanyName] = useState('')
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!name || !username || !email) {
-      return alert('Name, username, and email are required')
+      return setError('Name, username, and email are required')
     }
 
     onAddEmployee({
@@ -44,10 +45,16 @@ export function AddEmployeeForm({ onAddEmployee }: AddEmployeeFormProps) {
     setCompanyName('')
   }
 
+  if (error) {
+    throw new Error(error)
+  }
+
   return (
     <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
         <h3 className="form-title">Register Employee</h3>
+        
+        
 
         <div className="form-group">
           <label>Full Name</label>

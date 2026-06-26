@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
-import UserCard from './EmployeeCard';
+import EmployeeCard from './EmployeeCard';
 import type { Employee } from '../types/employee'
 import './../App.css';
 import type { UserListProps } from "../types/employee"
 import { SearchBar } from './SearchBar'
 import { AddEmployeeForm } from './EmployeeForm';
 
-export default function UserList({ selectedUser, onSelectUser }: UserListProps) {
+export default function UserList({ selectedEmployee, onSelectEmployee }: UserListProps) {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -86,11 +86,11 @@ export default function UserList({ selectedUser, onSelectUser }: UserListProps) 
         <div className="empty-state">No matching team members found.</div>
       ) : (
         filteredUsers.map((employee) => (
-          <UserCard 
+          <EmployeeCard 
             key={employee.id} 
             employee={employee} 
-            isSelected={selectedUser?.id === employee.id}
-            onSelectUser={onSelectUser} 
+            isSelected={selectedEmployee?.id === employee.id}
+            onSelectUser={onSelectEmployee} 
           />
         ))
       )}

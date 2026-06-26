@@ -5,7 +5,7 @@ import './App.css';
 import { EmployeeDetails } from './components/EmployeeDetails';
 
 export default function App() {
-  const [selectedUser, setSelectedUser] = useState<Employee | null>(null);
+  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(null);
 
   return (
     <div className="dashboard-container">
@@ -14,16 +14,16 @@ export default function App() {
         <p>Manage system operations, active records, and connected personnel profiles.</p>
       </header>
       
-      <main className={`dashboard-grid ${selectedUser ? 'has-selection' : ''}`}>
+      <main className={`dashboard-grid ${selectedEmployee ? 'has-selection' : ''}`}>
         {/* Primary Operational Section */}
         <div>
-          <EmployeeList selectedUser={selectedUser} onSelectUser={setSelectedUser} />
+          <EmployeeList selectedEmployee={selectedEmployee} onSelectEmployee={setSelectedEmployee} />
         </div>
 
         {/* Side Detail Inspection Panel */}
         <EmployeeDetails 
-          value={selectedUser} 
-          onChange={setSelectedUser} 
+          value={selectedEmployee} 
+          onChange={setSelectedEmployee} 
         />
       </main>
     </div>

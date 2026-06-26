@@ -32,8 +32,8 @@ export interface Employee {
 
 // --- Component prop types ---
 export interface UserListProps {
-  selectedUser: Employee | null;
-  onSelectUser: (user: Employee | null) => void;
+  selectedEmployee: Employee | null;
+  onSelectEmployee: (user: Employee | null) => void;
 }
 
 export interface UserCardProps {

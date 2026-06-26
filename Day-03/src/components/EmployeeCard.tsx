@@ -1,7 +1,7 @@
 import './../App.css';
 import type {UserCardProps} from '../types/employee'
 
-export default function EmployeeCrad({ employee, isSelected, onSelectUser }: UserCardProps) {
+export default function EmployeeCard({ employee, isSelected, onSelectUser }: UserCardProps) {
   return (
     <div 
       className={`user-card ${isSelected ? 'is-active' : ''}`}
