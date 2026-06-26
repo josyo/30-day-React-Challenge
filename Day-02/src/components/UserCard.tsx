@@ -4,7 +4,7 @@ export interface User {
   id: number;
   name: string;
   email: string;
-  company: string;
+  country: string;
 }
 
 interface UserCardProps {

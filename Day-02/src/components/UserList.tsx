@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import UserCard from './userCard';
-import type { User } from './userCard'
+import UserCard from './UserCard';
+import type { User } from './UserCard'
 import './../App.css';
 
 interface UserListProps {
