@@ -1,8 +1,10 @@
 # 30-Day React Challenge 🚀
 
-A 30-day project-driven journey to master modern React by building real applications from scratch.
+A 30-day project-driven journey to master modern React by building increasingly sophisticated applications from scratch.
 
-Rather than following long tutorials, this repository documents my progress as I learn React through hands-on development, progressively introducing more advanced concepts and architectural patterns.
+This repository documents my progression from React fundamentals to production-ready development patterns through daily projects, refactoring exercises, and real-world architectural practices.
+
+Rather than following lengthy tutorials, every concept is reinforced by building, reviewing, and improving complete applications.
 
 ---
 
@@ -12,20 +14,22 @@ Rather than following long tutorials, this repository documents my progress as I
 * Strengthen TypeScript proficiency
 * Learn modern React patterns and best practices
 * Develop scalable component architecture
-* Create a portfolio of projects demonstrating real-world frontend skills
+* Master reusable state management techniques
+* Create a portfolio demonstrating practical frontend engineering skills
 
 ---
 
 ## 🧠 Learning Philosophy
 
-Every day follows a simple workflow:
+Every day follows the same development cycle:
 
 1. Learn a new React concept
 2. Apply it immediately in a project
-3. Refactor for readability and maintainability
-4. Commit and document progress
+3. Refactor for maintainability
+4. Review architecture and code quality
+5. Commit and document progress
 
-The emphasis is on understanding *why* patterns are used, not simply making applications work.
+The emphasis is on understanding **why** patterns exist—not simply making applications work.
 
 ---
 
@@ -36,19 +40,20 @@ The emphasis is on understanding *why* patterns are used, not simply making appl
 * Vite
 * CSS
 * Fetch API
+* Custom Hooks
 * Git & GitHub
 
 ---
 
-## 📚 Progress Log
+# 📚 Projects & Learning Progress
 
-### ✅ Day 1 — React Fundamentals
+## ✅ Day 1 — React Fundamentals
 
-#### Project
+### Project
 
-Personal Dashboard
+**Personal Dashboard**
 
-#### Concepts Covered
+### Concepts Covered
 
 * JSX
 * Functional Components
@@ -59,22 +64,22 @@ Personal Dashboard
 * Rendering Lists
 * Immutable State Updates
 
-#### Features
+### Features
 
 * Profile Card
-* Study Hour Counter
+* Study Hour Tracker
 * Dynamic Skills List
-* Add New Skill
+* Add Skill Functionality
 
 ---
 
-### ✅ Day 2 — Effects & API Integration
+## ✅ Day 2 — Effects & API Integration
 
-#### Project
+### Project
 
-User Directory Dashboard
+**User Directory Dashboard**
 
-#### Concepts Covered
+### Concepts Covered
 
 * useEffect
 * Fetch API
@@ -85,42 +90,74 @@ User Directory Dashboard
 * Derived State
 * Component Communication
 
-#### Features
+### Features
 
 * Fetch users from an API
-* Loading spinner
-* Error state with retry
-* Search users by name
-* Select user
-* View user details
+* Loading indicator
+* Error handling with retry
+* User search
+* User selection
+* Details panel
 
 ---
 
-### ✅ Day 3 — Component Architecture
+## ✅ Day 3 — Component Architecture
 
-#### Project
+### Project
 
-Employee Management Dashboard
+**Employee Management Dashboard**
 
-#### Concepts Covered
+### Concepts Covered
 
 * Component Composition
 * Lifting State Up
 * Smart vs Presentational Components
-* Type Organization
-* Reusable Components
+* Shared Type Definitions
+* Modular Folder Structure
 * Local Form State
 * POST Requests
 * Feature Separation
 
-#### Features
+### Features
 
 * Employee Directory
 * Employee Details Panel
 * Search Component
-* Add Employee Form
-* Shared Type Definitions
+* Employee Registration Form
+* Shared Type System
 * Modular Component Structure
+
+---
+
+## ✅ Day 4 — Custom Hooks & Logic Reusability
+
+### Project
+
+**Employee Management Dashboard (Architecture Refactor)**
+
+### Concepts Covered
+
+* Custom Hooks
+* Separation of Business Logic
+* Hook Composition
+* Reusable Data Fetching
+* Reusable Search Logic
+* Encapsulation
+* Domain-Based Logic
+
+### Custom Hooks Built
+
+* `useFetchEmployees`
+* `useAddEmployee`
+* `useSearch`
+
+### Improvements
+
+* Extracted employee fetching into reusable hooks
+* Separated API logic from UI components
+* Centralized employee-related operations
+* Reused search functionality across components
+* Improved maintainability through cleaner architecture
 
 ---
 
@@ -130,49 +167,73 @@ Employee Management Dashboard
 30-day-react-challenge/
 │
 ├── day-01/
-│
 ├── day-02/
-│
 ├── day-03/
+├── day-04/
 │
 └── README.md
 ```
 
-Each folder contains an independent project representing that day's learning objectives.
+Each folder contains an independent project or architectural refactor representing that day's learning objectives.
 
 ---
 
-## 🚀 Skills Demonstrated So Far
+## 🚀 Skills Demonstrated
 
-* React Fundamentals
-* TypeScript
+### React
+
+* Components
+* Props
 * State Management
+* useEffect
+* Custom Hooks
 * Component Composition
-* API Integration
 * Conditional Rendering
+
+### TypeScript
+
+* Shared Interfaces
+* Utility Types
+* Typed Props
+* Strongly Typed State
+
+### Frontend Engineering
+
+* API Integration
 * Controlled Forms
-* Component Reusability
 * Basic CRUD Operations
-* Folder Organization
-* Modern React Development Workflow
+* Error Handling
+* Loading States
+* Modular Folder Structure
+* Separation of Concerns
+* Reusable Business Logic
 
 ---
 
 ## 📈 Challenge Progress
 
-| Day   | Topic                       | Status |
-| ----- | --------------------------- | ------ |
-| 01    | React Fundamentals          | ✅      |
-| 02    | useEffect & API Integration | ✅      |
-| 03    | Component Architecture      | ✅      |
-| 04    | Custom Hooks                | ⏳      |
-| 05–30 | In Progress                 | ⏳      |
+| Day   | Topic                      | Status |
+| ----- | -------------------------- | :----: |
+| 01    | React Fundamentals         |    ✅   |
+| 02    | Effects & API Integration  |    ✅   |
+| 03    | Component Architecture     |    ✅   |
+| 04    | Custom Hooks               |    ✅   |
+| 05    | useReducer & Complex State |    ⏳   |
+| 06–30 | In Progress                |    ⏳   |
+
+---
+
+## 🎯 Current Focus
+
+I'm currently progressing from React fundamentals toward production-ready application architecture by emphasizing reusable logic, scalable component design, and maintainable code organization.
 
 ---
 
 ## 📌 Why This Repository?
 
-This challenge is designed to build consistent development habits while producing a collection of increasingly sophisticated React applications. By the end of the challenge, the repository will demonstrate both technical growth and the ability to structure maintainable frontend applications.
+This challenge serves as a public record of my growth as a frontend engineer.
+
+Instead of showcasing isolated tutorial projects, it demonstrates an incremental learning process where each day builds upon previous concepts, resulting in progressively more maintainable, scalable, and production-oriented React applications.
 
 ---
 
