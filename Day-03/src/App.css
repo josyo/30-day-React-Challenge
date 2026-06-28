@@ -1,48 +1,51 @@
-/* =====================================================
-   IMPORT
-   ===================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ================================================
+   FONTS
+   ================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 
-/* =====================================================
+/* ================================================
    TOKENS
-   ===================================================== */
+   ================================================ */
 :root {
-  /* surface */
-  --bg:          #F5F5F4;
-  --surface:     #FFFFFF;
-  --surface-alt: #FAFAF9;
+  /* surfaces */
+  --page:    #EEF2FF;   /* indigo-50 — coordinates with the accent */
+  --surface: #FFFFFF;
 
   /* borders */
-  --border:        #E7E5E4;
-  --border-strong: #D6D3D1;
+  --border:        #E0E7FF;  /* indigo-100 */
+  --border-strong: #C7D2FE;  /* indigo-200 */
 
   /* text */
-  --text-1: #1C1917;
-  --text-2: #57534E;
-  --text-3: #A8A29E;
+  --text-1: #1E1B4B;   /* indigo-950 — rich, not generic black */
+  --text-2: #4338CA;   /* indigo-700 — mid tone that stays on-theme */
+  --text-3: #A5B4FC;   /* indigo-300 — muted */
 
-  /* accent — cyan, unusual for HR tools, precise and techy */
-  --accent:        #0891B2;
-  --accent-dark:   #0E7490;
-  --accent-bg:     #ECFEFF;
-  --accent-border: rgba(8, 145, 178, 0.2);
-  --accent-glow:   rgba(8, 145, 178, 0.13);
-  --accent-shadow: 0 4px 14px rgba(8, 145, 178, 0.28);
+  /* accent */
+  --accent:        #7C3AED;  /* violet-700 */
+  --accent-bright: #8B5CF6;  /* violet-500 */
+  --accent-light:  #EDE9FE;  /* violet-100 */
+  --accent-border: rgba(124, 58, 237, 0.2);
+  --accent-glow:   rgba(124, 58, 237, 0.15);
+
+  /* header & panel — the dark voice */
+  --dark-from: #1E1B4B;
+  --dark-to:   #3730A3;
 
   /* status */
   --error:    #EF4444;
   --error-bg: #FFF1F1;
 
   /* shadows */
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 8px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(30,27,75,0.08), 0 1px 2px rgba(30,27,75,0.05);
+  --shadow-md: 0 4px 12px rgba(30,27,75,0.10), 0 2px 4px rgba(30,27,75,0.06);
+  --shadow-lg: 0 10px 24px rgba(30,27,75,0.12), 0 4px 8px rgba(30,27,75,0.05);
+  --shadow-accent: 0 4px 16px rgba(124,58,237,0.32);
 
-  /* radii */
-  --r-sm: 6px;
-  --r:    10px;
-  --r-lg: 14px;
+  /* geometry */
+  --r-sm: 8px;
+  --r:    12px;
+  --r-lg: 16px;
 
   /* motion */
   --ease:   cubic-bezier(0.4, 0, 0.2, 1);
@@ -51,9 +54,9 @@
 }
 
 
-/* =====================================================
+/* ================================================
    RESET
-   ===================================================== */
+   ================================================ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -61,58 +64,80 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--bg);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--page);
   color: var(--text-1);
-  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
 
 
-/* =====================================================
-   LAYOUT
-   ===================================================== */
+/* ================================================
+   OUTER CONTAINER
+   ================================================ */
 .dashboard-container {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 1.5rem 3rem;
 }
 
+
+/* ================================================
+   HEADER — the bold dark statement
+   ================================================ */
 .dashboard-header {
-  padding: 2rem 0 1.5rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--dark-from) 0%, var(--dark-to) 100%);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  padding: 2.5rem 2rem 2.25rem;
+  margin: 0 -1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* decorative radial glows */
+.dashboard-header::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(167,139,250,0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.dashboard-header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 65%);
+  pointer-events: none;
 }
 
 .dashboard-header h1 {
-  font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--text-1);
-  margin-bottom: 0.3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-/* Signature: small cyan pip anchors the heading */
-.dashboard-header h1::before {
-  content: '';
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: var(--accent);
-  border-radius: 50%;
-  flex-shrink: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .dashboard-header p {
-  font-size: 0.8125rem;
-  color: var(--text-3);
-  padding-left: 1.3125rem; /* aligns under the title text, after the pip */
+  font-size: 0.875rem;
+  color: rgba(199, 210, 254, 0.75);
+  position: relative;
+  z-index: 1;
 }
 
+
+/* ================================================
+   GRID
+   ================================================ */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -121,23 +146,22 @@ body {
 }
 
 .dashboard-grid.has-selection {
-  grid-template-columns: 1fr 1.6fr;
+  grid-template-columns: 1fr 1.65fr;
 }
 
-
-/* =====================================================
-   SEARCH
-   ===================================================== */
-
 /*
-  Bug fix: SearchBar.tsx wraps the input in its own .search-wrapper,
-  and EmployeeList.tsx wraps SearchBar in another .search-wrapper.
-  The outer one just adds extra space — neutralize it.
+  Bug fix: SearchBar wraps the input in .search-wrapper,
+  and EmployeeList wraps SearchBar in another .search-wrapper.
+  The outer one just stacks margin — kill it.
 */
 .dashboard-grid > div > .search-wrapper {
   margin-bottom: 0;
 }
 
+
+/* ================================================
+   SEARCH
+   ================================================ */
 .search-wrapper {
   margin-bottom: 0.875rem;
 }
@@ -146,12 +170,13 @@ body {
   width: 100%;
   font-family: inherit;
   font-size: 0.875rem;
-  padding: 0.5625rem 0.875rem;
-  border: 1px solid var(--border);
+  padding: 0.625rem 1rem;
+  border: 1.5px solid var(--border-strong);
   border-radius: var(--r);
   background: var(--surface);
   color: var(--text-1);
   outline: none;
+  box-shadow: var(--shadow-sm);
   transition: border-color var(--t), box-shadow var(--t);
 }
 
@@ -160,20 +185,20 @@ body {
 }
 
 .search-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  border-color: var(--accent-bright);
+  box-shadow: 0 0 0 3px var(--accent-glow), var(--shadow-sm);
 }
 
 
-/* =====================================================
+/* ================================================
    EMPLOYEE CARDS
-   ===================================================== */
+   ================================================ */
 .user-card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--r);
-  padding: 0.875rem 1rem;
-  margin-bottom: 0.375rem;
+  padding: 1rem 1.125rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,44 +206,46 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: border-color var(--t), box-shadow var(--t), background var(--t);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color var(--t),
+    box-shadow var(--t),
+    background var(--t),
+    transform 120ms var(--ease);
 }
 
-/* Left accent bar */
+/* Left gradient bar */
 .user-card::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 2.5px;
-  background: var(--accent);
-  border-radius: 0 2px 2px 0;
-  opacity: 0;
-  transform: scaleY(0.3);
+  top: 0;
+  bottom: 0;
+  width: 3.5px;
+  background: linear-gradient(to bottom, var(--accent-bright), var(--accent));
+  transform: scaleY(0);
   transform-origin: center;
-  transition: opacity var(--t), transform 200ms var(--spring);
+  transition: transform 240ms var(--spring);
 }
 
 .user-card:hover {
   border-color: var(--border-strong);
   box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .user-card:hover::before {
-  opacity: 0.35;
-  transform: scaleY(0.65);
+  transform: scaleY(0.5);
 }
 
-/* Active: gradient background from cyan tint to white, left → right */
 .user-card.is-active {
-  background: linear-gradient(to right, var(--accent-bg) 0%, var(--surface) 70%);
+  background: linear-gradient(to right, #F5F3FF 0%, #FAFAFF 50%, var(--surface) 100%);
   border-color: var(--accent-border);
-  box-shadow: 0 0 0 1px var(--accent-border), var(--shadow-xs);
+  box-shadow: 0 0 0 1px var(--accent-border), var(--shadow-md);
+  transform: none;
 }
 
 .user-card.is-active::before {
-  opacity: 1;
   transform: scaleY(1);
 }
 
@@ -227,10 +254,10 @@ body {
 }
 
 .user-info h3 {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: 700;
   color: var(--text-1);
-  line-height: 1.4;
+  line-height: 1.35;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -240,16 +267,16 @@ body {
   font-size: 0.75rem;
   color: var(--text-3);
   display: block;
-  margin-top: 0.0625rem;
+  margin-top: 0.125rem;
 }
 
 .view-btn {
   font-family: inherit;
   font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.3125rem 0.6875rem;
+  font-weight: 600;
+  padding: 0.3125rem 0.75rem;
   border-radius: var(--r-sm);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border-strong);
   background: transparent;
   color: var(--text-3);
   cursor: pointer;
@@ -259,8 +286,9 @@ body {
 }
 
 .user-card:hover .view-btn {
-  color: var(--text-2);
-  border-color: var(--border-strong);
+  border-color: var(--accent-border);
+  color: var(--accent-bright);
+  background: var(--accent-light);
 }
 
 .is-active .view-btn {
@@ -270,29 +298,30 @@ body {
 }
 
 
-/* =====================================================
+/* ================================================
    STATE CONTAINERS
-   ===================================================== */
+   ================================================ */
 .state-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.875rem;
+  gap: 1rem;
   padding: 4rem 1.5rem;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
   text-align: center;
 }
 
 .spinner {
-  width: 30px;
-  height: 30px;
-  border: 2.5px solid var(--border);
-  border-top-color: var(--accent);
+  width: 32px;
+  height: 32px;
+  border: 2.5px solid var(--border-strong);
+  border-top-color: var(--accent-bright);
   border-radius: 50%;
-  animation: spin 0.6s linear infinite;
+  animation: spin 0.65s linear infinite;
 }
 
 @keyframes spin {
@@ -302,17 +331,17 @@ body {
 .error-text {
   color: var(--error);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .retry-btn {
   font-family: inherit;
   font-size: 0.8125rem;
-  font-weight: 500;
-  padding: 0.375rem 0.875rem;
+  font-weight: 600;
+  padding: 0.4375rem 1rem;
   border-radius: var(--r-sm);
-  border: 1px solid var(--accent-border);
-  background: var(--accent-bg);
+  border: 1.5px solid var(--accent-border);
+  background: var(--accent-light);
   color: var(--accent);
   cursor: pointer;
   transition: all var(--t);
@@ -325,55 +354,56 @@ body {
 }
 
 .empty-state {
-  padding: 2.75rem 1.5rem;
+  padding: 3rem 1.5rem;
   text-align: center;
   color: var(--text-3);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   background: var(--surface);
-  border: 1.5px dashed var(--border);
+  border: 1.5px dashed var(--border-strong);
   border-radius: var(--r);
 }
 
 
-/* =====================================================
+/* ================================================
    DETAILS PANEL
-   ===================================================== */
+   ================================================ */
 .details-panel {
   background: var(--surface);
-
-  /* Signature: cyan top stripe functions as a panel "tab" indicator */
-  border: 1px solid var(--border);
-  border-top: 2.5px solid var(--accent);
-  border-radius: 0 0 var(--r-lg) var(--r-lg);
-
-  padding: 1.375rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow-y: auto;
   position: sticky;
   top: 1.5rem;
   max-height: calc(100vh - 3rem);
-  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
   scrollbar-width: thin;
   scrollbar-color: var(--border-strong) transparent;
-  animation: slideInPanel 220ms var(--spring) both;
+  animation: slideInPanel 240ms var(--spring) both;
 }
 
 @keyframes slideInPanel {
-  from { opacity: 0; transform: translateX(18px) scale(0.988); }
+  from { opacity: 0; transform: translateX(22px) scale(0.982); }
   to   { opacity: 1; transform: translateX(0)   scale(1); }
 }
 
+/* Dark header — mirrors the page header, ties the two panels together */
 .panel-header {
+  background: linear-gradient(135deg, var(--dark-from) 0%, var(--dark-to) 100%);
+  padding: 1.25rem 1.375rem 1.125rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.125rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .panel-header h2 {
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-3);
+  letter-spacing: 0.1em;
+  color: rgba(199, 210, 254, 0.7);
 }
 
 .close-btn {
@@ -382,10 +412,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--r-sm);
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-3);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
   cursor: pointer;
   font-size: 0.6875rem;
   font-family: inherit;
@@ -394,27 +424,29 @@ body {
 }
 
 .close-btn:hover {
-  background: var(--error-bg);
-  color: var(--error);
-  border-color: rgba(239, 68, 68, 0.2);
+  background: rgba(239,68,68,0.25);
+  border-color: rgba(239,68,68,0.4);
+  color: #FCA5A5;
 }
 
 .panel-divider {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 1rem 0;
+  margin: 0.875rem 1.375rem;
 }
 
 .detail-section-label {
-  font-size: 0.6875rem;
-  font-weight: 600;
+  font-size: 0.625rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--accent-bright);
+  padding: 0 1.375rem;
+  margin-bottom: 0.625rem;
 }
 
 .detail-group {
+  padding: 0 1.375rem;
   margin-bottom: 0.75rem;
 }
 
@@ -424,7 +456,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-3);
-  margin-bottom: 0.1875rem;
+  margin-bottom: 0.2rem;
 }
 
 .detail-value {
@@ -437,7 +469,7 @@ body {
   font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
   font-size: 0.8125rem;
   color: var(--text-2);
-  background: var(--bg);
+  background: var(--page);
   padding: 0.125rem 0.375rem;
   border-radius: 4px;
   display: inline;
@@ -449,9 +481,8 @@ body {
 }
 
 .detail-link {
-  color: var(--accent);
+  color: var(--accent-bright);
   text-decoration: none;
-  font-size: 0.875rem;
   transition: opacity var(--t);
 }
 
@@ -460,35 +491,64 @@ body {
   text-decoration: underline;
 }
 
+/* Space after the last section */
+.detail-group:last-child {
+  margin-bottom: 1.5rem;
+}
 
-/* =====================================================
+
+/* ================================================
    FORM
-   ===================================================== */
+   ================================================ */
 .form-wrapper {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--r-lg);
-  padding: 1.25rem;
+  overflow: hidden;
   margin-top: 0.875rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-body {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6875rem;
+}
+
+.form-submit {
+  width: 100%;         /* full width within form-body padding */
+  margin-top: 0.25rem;
 }
 
 .form-title {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-2);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(199, 210, 254, 0.7);
+  padding: 1rem 1.25rem 0.875rem;
+  background: linear-gradient(135deg, var(--dark-from) 0%, var(--dark-to) 100%);
+}
+
+/* The actual form fields area */
+.form-wrapper form > *:not(h3) {
+  padding: 0 1.25rem;
 }
 
 .form-group {
   margin-bottom: 0.6875rem;
+  padding: 0;
+}
+
+.form-group:first-of-type {
+  margin-top: 1rem;
 }
 
 .form-group label {
   display: block;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-2);
   margin-bottom: 0.3125rem;
 }
@@ -497,10 +557,10 @@ body {
   width: 100%;
   font-family: inherit;
   font-size: 0.875rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border);
+  padding: 0.5625rem 0.75rem;
+  border: 1.5px solid var(--border-strong);
   border-radius: var(--r-sm);
-  background: var(--bg);
+  background: var(--page);
   color: var(--text-1);
   outline: none;
   transition: border-color var(--t), box-shadow var(--t), background var(--t);
@@ -512,40 +572,47 @@ body {
 
 .form-input:focus {
   background: var(--surface);
-  border-color: var(--accent);
+  border-color: var(--accent-bright);
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .form-submit {
-  width: 100%;
+  width: calc(100% - 2.5rem);
+  margin: 0.875rem 1.25rem 1.25rem;
   font-family: inherit;
   font-size: 0.875rem;
-  font-weight: 600;
-  padding: 0.5625rem 1rem;
+  font-weight: 700;
+  padding: 0.625rem 1rem;
   border-radius: var(--r-sm);
   border: none;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent) 100%);
   color: #fff;
   cursor: pointer;
-  margin-top: 0.5rem;
   letter-spacing: -0.01em;
-  transition: background var(--t), box-shadow var(--t), transform 100ms var(--ease);
+  display: block;
+  transition: opacity var(--t), box-shadow var(--t), transform 100ms var(--ease);
 }
 
 .form-submit:hover {
-  background: var(--accent-dark);
-  box-shadow: var(--accent-shadow);
+  opacity: 0.9;
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-1px);
 }
 
 .form-submit:active {
   transform: scale(0.99);
+  opacity: 1;
 }
 
 
-/* =====================================================
+/* ================================================
    RESPONSIVE
-   ===================================================== */
+   ================================================ */
 @media (max-width: 768px) {
+  .dashboard-header {
+    margin: 0 -1.5rem 2rem;
+  }
+
   .dashboard-grid.has-selection {
     grid-template-columns: 1fr;
   }
@@ -553,8 +620,6 @@ body {
   .details-panel {
     position: static;
     max-height: none;
-    border-radius: var(--r-lg);
-    border-top: 2.5px solid var(--accent);
   }
 }
 
