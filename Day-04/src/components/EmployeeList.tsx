@@ -4,8 +4,8 @@ import './../App.css';
 import type { UserListProps } from "../types/employee"
 import { SearchBar } from './SearchBar'
 import { AddEmployeeForm } from './EmployeeForm';
-import { useFetchEmployees} from '../hooks/useFetchEmployees';
-import { useAddEmployee } from '../hooks/useAddEmployee';
+import { useFetchEmployees} from '../hooks/useEmployees';
+import { useAddEmployee } from '../hooks/useEmployees';
 import { useSearch } from '../hooks/useSearch'
 
 
