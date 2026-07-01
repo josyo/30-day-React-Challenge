@@ -24,6 +24,7 @@ export interface Task {
   reporterEmail: string;
   contactPhone: string;
   referenceUrl: string;
+  status: 'ONGOING' | 'COMPLETED'
   location: ExecutionLocation;
   category: Category;
 }

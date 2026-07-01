@@ -1,24 +1,32 @@
-import EmployeeCard from "./TaskCard";
-
+import TaskCard from "./TaskCard";
 import "./../App.css";
 import type { TaskListProps } from "../types/task";
 import { SearchBar } from "./SearchBar";
 import { AddTaskForm } from "./TaskForm";
-import { useFetchTask, useAddTask } from "../hooks/useTask";
+import { useFetchTask, useTaskMutations } from "../hooks/useTask";
 import { useSearch } from "../hooks/useSearch";
+
 
 export default function UserList({
   selectedTask,
   onSelectTask,
 }: TaskListProps) {
-  const { employees, loading, error, loadTasks } = useFetchTask();
-  const { addTask, isSubmitting, submitError } = useAddTask({
-    onSuccess: (newTask) => {
+  const { tasks, loading, error, loadTasks } = useFetchTask();
+  const { 
+    addTask,
+    deleteTask,
+    toggleTaskStatus,
+    isSubmitting,
+    isDeleting,
+    isToggling,
+    mutationError,
+  } = useTaskMutations({
+    onSuccess: () => {
       loadTasks();
     },
   });
 
-  const { searchTerm, setSearchTerm, filteredTasks } = useSearch(employees);
+  const { searchTerm, setSearchTerm, filteredTasks } = useSearch(tasks);
 
   if (loading) {
     return (
@@ -42,7 +50,7 @@ export default function UserList({
     );
   }
 
-  if (submitError) {
+  if (mutationError) {
     return (
       <div className="state-container">
         <p className="error-text">{error}</p>
@@ -63,7 +71,7 @@ export default function UserList({
         <div className="empty-state">No matching team members found.</div>
       ) : (
         filteredTasks.map((employee) => (
-          <EmployeeCard
+          <TaskCard
             key={employee.id}
             task={employee}
             isSelected={selectedTask?.id === employee.id}

@@ -72,10 +72,10 @@ export function useAddEmployee(options?: UseAddEmployeeOptions) {
       }
     } catch (err: unknown) {
       if (err instanceof Error) {
-                setSubmitError(err.message)
-            } else {
-                setSubmitError('Unexpected error')
-            }
+        setSubmitError(err.message)
+      } else {
+        setSubmitError('Unexpected error')
+      }
     } finally {
       setIsSubmitting(false);
     }

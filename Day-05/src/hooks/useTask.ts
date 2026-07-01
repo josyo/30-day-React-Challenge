@@ -27,7 +27,7 @@ function fetchReducer(state: FetchState, action: FetchAction) {
     case 'FETCH_START':
       return { ...state, loading: true, error: null }
     case 'FETCH_SUCCESS':
-      return { ...state, loading: false, task: action.payload }
+      return { ...state, loading: false, tasks: action.payload }
     case 'FETCH_ERROR':
       return { ...state, loading: false, error: action.payload}
     default:
@@ -62,50 +62,56 @@ export function useFetchTask() {
     },[loadTasks])
 
     return {
-      employees: state.tasks,
+      tasks: state.tasks,
       loading: state.loading,
       error: state.error,
       loadTasks }
 } 
 
-interface AddState {
+interface MutationState {
   isSubmitting: boolean
-  submitError: string | null
+  isDeleting: boolean
+  isToggling: boolean
+  error: string | null
 }
 
-type AddAction = 
-  | {type: 'SUBMIT_START'}
-  | {type: 'SUBMIT_SUCCESS'}
-  | {type: 'SUBMIT_ERROR', payload: string}
+type MutationAction = 
+  | {type: 'MUTATION_START'; field: 'isSubmitting' | 'isDeleting' | 'isToggling'}
+  | {type: 'MUTATION_SUCCESS'}
+  | {type: 'MUTATION_ERROR', payload: string}
   
 
-const initialAddState: AddState = {
+const initialAddState: MutationState = {
   isSubmitting: false,
-  submitError: null
+  isDeleting: false,
+  isToggling: false,
+  error: null
 }
 
-function AddReducer(state: AddState, action: AddAction) {
+function mutationReducer(state: MutationState, action: MutationAction) {
   switch(action.type) {
-    case 'SUBMIT_START':
-      return { ...state, isSubmitting: true, submitError: null }
-    case 'SUBMIT_SUCCESS':
-      return { ...state, isSubmitting: false, submitError: null }
-    case 'SUBMIT_ERROR':
-      return { ...state, isSubmitting: false, submitError: action.payload }
+    case 'MUTATION_START':
+      return { ...state, isSubmitting: false, isDeleting: false, isToggling: false, error: null, [action.field]: true }
+    case 'MUTATION_SUCCESS':
+      return { ...state, isSubmitting: false, isDeleting: false, isToggling: false, error: null }
+    case 'MUTATION_ERROR':
+      return { ...state, isSubmitting: false, isDeleting: false, isToggling: false, error: action.payload }
+    default:
+      return state
   }
 }
 
-export function useAddTask(options?: UseAddTaskOptions) {
-  const [state, dispatch] = useReducer(AddReducer, initialAddState)
+export function useTaskMutations(options?: UseAddTaskOptions) {
+  const [state, dispatch] = useReducer(mutationReducer, initialAddState)
 
-  const addTask = async (newEmployeeData: Omit<Task, 'id'>) => {
+  const addTask = async (newTaskData: Omit<Task, 'id'>) => {
     try {
-      dispatch({ type: 'SUBMIT_START'})
+      dispatch({ type: 'MUTATION_START', field: 'isSubmitting' })
 
       const response = await fetch('https://your-real-api.com/v1/employees', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newEmployeeData),
+        body: JSON.stringify(newTaskData),
       });
 
       if (!response.ok) {
@@ -113,7 +119,7 @@ export function useAddTask(options?: UseAddTaskOptions) {
       }
 
       const createdTask = await response.json();
-      dispatch({ type: 'SUBMIT_SUCCESS' })
+      dispatch({ type: 'MUTATION_SUCCESS' })
 
       // Trigger our success callback if it was provided
       if (options?.onSuccess) {
@@ -121,13 +127,60 @@ export function useAddTask(options?: UseAddTaskOptions) {
       }
     } catch (err: unknown) {
       const errMsg = err instanceof Error ? err.message : 'An unexpected error occured'
-      dispatch({ type: 'SUBMIT_ERROR', payload: errMsg}) 
+      dispatch({ type: 'MUTATION_ERROR', payload: errMsg}) 
     }
   };
 
+  
+
+  const deleteTask = async (id: number) => {
+    try {
+      dispatch({ type: 'MUTATION_START', field: 'isDeleting'})
+
+      const response = await fetch(`https://your-real-api.com/v1/task/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error ('Failed to delete task')
+      }
+
+      dispatch({ type: 'MUTATION_SUCCESS'})
+    }catch(err: unknown) {
+      const errMsg = err instanceof Error ? err.message : 'An unexpected error occured'
+      dispatch({ type: 'MUTATION_ERROR', payload: errMsg})
+    } 
+  }
+
+  const toggleTaskStatus = async (task: Task) => {
+    try{
+      dispatch({ type: 'MUTATION_START', field: 'isToggling' })
+      const response = await fetch(`https://your-real-api.com/v1/tasks/${task.id}`, {
+        method: 'PATCH', // PATCH updates a partial piece of data rather than replacing it
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ completed: !task.completed }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update task status')
+      }
+
+      dispatch({ type: 'MUTATION_SUCCESS' })
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : "An unexpected error occured"
+      dispatch({ type: 'MUTATION_ERROR', payload: errMsg })
+    }
+  }
+
   return { 
     addTask,
+    deleteTask,
+    toggleTaskStatus,
     isSubmitting: state.isSubmitting,
-    submitError: state.submitError,
+    isDeleting: state.isDeleting,
+    isToggling: state.isToggling,
+    mutationError: state.error,
   };
 }
+
+
