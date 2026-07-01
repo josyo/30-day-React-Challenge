@@ -49,41 +49,47 @@ export default function UserList({
       </div>
     );
   }
+  
+  return(
+    <div className="task-list-container">
+      {/* Non-fatal mutation banner: shows errors without destroying the main UI layout */}
+      {mutationError && (
+        <div className="mutation-error-banner">
+          <p>⚠️ Action failed: {mutationError}</p>
+        </div>
+      )}
 
-  if (mutationError) {
-    return (
-      <div className="state-container">
-        <p className="error-text">{error}</p>
-        <button className="retry-btn" onClick={loadTasks}>
-          Try Again
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <div>
       <div className="search-wrapper">
         <SearchBar value={searchTerm} onChange={setSearchTerm} />
       </div>
 
+      {/* Main Task List Display */}
       {filteredTasks.length === 0 ? (
-        <div className="empty-state">No matching team members found.</div>
+        <div className="empty-state">No matching tasks found.</div>
       ) : (
-        filteredTasks.map((employee) => (
-          <TaskCard
-            key={employee.id}
-            task={employee}
-            isSelected={selectedTask?.id === employee.id}
-            onSelectTask={onSelectTask}
-          />
-        ))
+        <div className="tasks-grid">
+          {filteredTasks.map((task) => (
+            <TaskCard
+              key={task.id}
+              task={task}
+              isSelected={selectedTask?.id === task.id}
+              onSelectTask={onSelectTask}
+              onDelete={deleteTask}           // Injected from our mutation hook
+              onToggle={toggleTaskStatus}     // Injected from our mutation hook
+            />
+          ))}
+        </div>
       )}
 
+      {/* Action Forms and Global Indicators */}
       <AddTaskForm onAddTask={addTask} />
 
-      {isSubmitting && (
-        <p className="saving-indicator">Saving new employee...</p>
+      {(isSubmitting || isDeleting || isToggling) && (
+        <p className="saving-indicator">
+          {isSubmitting && "Saving new task..."}
+          {isDeleting && "Deleting task..."}
+          {isToggling && "Updating task status..."}
+        </p>
       )}
     </div>
   );

@@ -1,0 +1,422 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Fix Main Server Ventilation",
+      "summary": "The primary cooling fan in rack B7 is throwing overheating warnings.",
+      "reporterEmail": "sysadmin@company.com",
+      "contactPhone": "1-555-0199",
+      "referenceUrl": "internal-wiki.local/hardware/cooling",
+      "status": "ONGOING",
+      "location": {
+        "room": "Server Room 3B",
+        "floor": "3rd Floor",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-NW",
+        "coordinates": { "lat": "37.7749", "lng": "-122.4194" }
+      },
+      "category": {
+        "name": "Hardware Infrastructure",
+        "focusArea": "Facility Maintenance",
+        "billingCode": "INFRA-2026"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Restock Breakroom Espresso Pods",
+      "summary": "The engineering wing has run completely dry of dark roast espresso blends.",
+      "reporterEmail": "dev-lead@company.com",
+      "contactPhone": "1-555-0142",
+      "referenceUrl": "office-supplies.local/inventory",
+      "status": "COMPLETED",
+      "location": {
+        "room": "Kitchenette Lounge",
+        "floor": "2nd Floor",
+        "building": "Annex South",
+        "zoneCode": "94102-SE",
+        "coordinates": { "lat": "37.7833", "lng": "-122.4167" }
+      },
+      "category": {
+        "name": "Office Operations",
+        "focusArea": "Employee Wellness",
+        "billingCode": "OPS-FOOD-99"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Patch Security Vulnerability CVE-2026",
+      "summary": "Critical runtime injection patch needs verification deployment on production node clusters.",
+      "reporterEmail": "sec-ops@company.com",
+      "contactPhone": "1-555-0111",
+      "referenceUrl": "cve.mitre.org/cgi-bin/cvename.cgi",
+      "status": "ONGOING",
+      "location": {
+        "room": "Virtual Dev Cluster",
+        "floor": "Cloud-Hosted",
+        "building": "AWS US-East-1",
+        "zoneCode": "VPC-CORE",
+        "coordinates": { "lat": "38.0328", "lng": "-78.4821" }
+      },
+      "category": {
+        "name": "Cybersecurity",
+        "focusArea": "Threat Remediation",
+        "billingCode": "SEC-PATCH-A"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Calibrate Lab Spectrometer",
+      "summary": "Annual precision recalculation for optical analysis equipment.",
+      "reporterEmail": "lab-tech@company.com",
+      "contactPhone": "1-555-0185",
+      "referenceUrl": "calibration-standards.org/specs",
+      "status": "COMPLETED",
+      "location": {
+        "room": "R&D Testing Bay",
+        "floor": "Basement B1",
+        "building": "Science Complex",
+        "zoneCode": "80301-LAB",
+        "coordinates": { "lat": "40.0150", "lng": "-105.2705" }
+      },
+      "category": {
+        "name": "Quality Assurance",
+        "focusArea": "Equipment Testing",
+        "billingCode": "QA-LAB-CAL"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Update Lobby Interactive Kiosk",
+      "summary": "Flash new directory mapping layout onto the touchscreen greeting displays.",
+      "reporterEmail": "reception@company.com",
+      "contactPhone": "1-555-0100",
+      "referenceUrl": "internal-maps.local/kiosk/v2",
+      "status": "ONGOING",
+      "location": {
+        "room": "Main Reception",
+        "floor": "1st Floor Lobby",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-LBY",
+        "coordinates": { "lat": "37.7751", "lng": "-122.4190" }
+      },
+      "category": {
+        "name": "Digital Signage",
+        "focusArea": "Visitor Experience",
+        "billingCode": "OPS-SIGN-44"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Replace Backup Generator Battery",
+      "summary": "Quarterly health test flagged auxiliary power unit cell degradation.",
+      "reporterEmail": "facilities@company.com",
+      "contactPhone": "1-555-0163",
+      "referenceUrl": "power-systems.local/maintenance",
+      "status": "ONGOING",
+      "location": {
+        "room": "Power Utility Vault",
+        "floor": "Exterior Yard",
+        "building": "Annex South",
+        "zoneCode": "94102-PWR",
+        "coordinates": { "lat": "37.7831", "lng": "-122.4165" }
+      },
+      "category": {
+        "name": "Facilities Management",
+        "focusArea": "Disaster Recovery",
+        "billingCode": "INFRA-PWR-BKP"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Install Marketing Banner Wraps",
+      "summary": "Mount the physical Q3 product visual promotion canvas along window walls.",
+      "reporterEmail": "creative-dir@company.com",
+      "contactPhone": "1-555-0127",
+      "referenceUrl": "brand-assets.local/print/q3",
+      "status": "COMPLETED",
+      "location": {
+        "room": "Atrium Corridor",
+        "floor": "2nd Floor Bridge",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-ATR",
+        "coordinates": { "lat": "37.7745", "lng": "-122.4198" }
+      },
+      "category": {
+        "name": "Brand Design",
+        "focusArea": "Physical Marketing Assets",
+        "billingCode": "MKT-PRINT-03"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Audit Finance Department Printers",
+      "summary": "Investigate recurring paper jams and secure-print firmware faults.",
+      "reporterEmail": "fin-leads@company.com",
+      "contactPhone": "1-555-0155",
+      "referenceUrl": "printer-admin.local/node/fin-prn01",
+      "status": "ONGOING",
+      "location": {
+        "room": "Accounting Suite",
+        "floor": "4th Floor",
+        "building": "Annex South",
+        "zoneCode": "94102-FIN",
+        "coordinates": { "lat": "37.7835", "lng": "-122.4169" }
+      },
+      "category": {
+        "name": "Desktop Support",
+        "focusArea": "Internal Office Hardware",
+        "billingCode": "IT-HELP-PRN"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Deploy Conference Room Polycoms",
+      "summary": "Set up video conferencing configurations and test ceiling mics in room 5A.",
+      "reporterEmail": "av-team@company.com",
+      "contactPhone": "1-555-0138",
+      "referenceUrl": "av-inventory.local/systems/poly5a",
+      "status": "COMPLETED",
+      "location": {
+        "room": "Boardroom 5A",
+        "floor": "5th Floor",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-BR5",
+        "coordinates": { "lat": "37.7755", "lng": "-122.4191" }
+      },
+      "category": {
+        "name": "Audio Visual",
+        "focusArea": "Collaboration Systems",
+        "billingCode": "AV-CONF-ROOM"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Inspect Roof Drainage System",
+      "summary": "Clear leaves and silt blockages out of parapet drains before heavy rains.",
+      "reporterEmail": "roofing@company.com",
+      "contactPhone": "1-555-0149",
+      "referenceUrl": "weather-alerts.local/weekly-outlook",
+      "status": "ONGOING",
+      "location": {
+        "room": "Main Roof Deck",
+        "floor": "Roof Level",
+        "building": "Science Complex",
+        "zoneCode": "80301-ROOF",
+        "coordinates": { "lat": "40.0155", "lng": "-105.2709" }
+      },
+      "category": {
+        "name": "Facilities Management",
+        "focusArea": "Weatherproofing Infrastructure",
+        "billingCode": "INFRA-EXT-DRAIN"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Recycle Retired Asset Laptops",
+      "summary": "Sanitize and process 15 hardware lifecycle laptops for eco-friendly sorting.",
+      "reporterEmail": "it-stockroom@company.com",
+      "contactPhone": "1-555-0182",
+      "referenceUrl": "blancco-wipe.local/logs/batch94",
+      "status": "COMPLETED",
+      "location": {
+        "room": "IT Storage Depot",
+        "floor": "Basement B2",
+        "building": "Annex South",
+        "zoneCode": "94102-B2",
+        "coordinates": { "lat": "37.7830", "lng": "-122.4160" }
+      },
+      "category": {
+        "name": "Asset Management",
+        "focusArea": "E-Waste Compliance",
+        "billingCode": "IT-LOGI-RECYCLE"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Upgrade Executive Suite Wi-Fi",
+      "summary": "Swap legacy access points for high-density corporate enterprise fixtures.",
+      "reporterEmail": "net-admin@company.com",
+      "contactPhone": "1-555-0104",
+      "referenceUrl": "unifi-controller.local/site/hq",
+      "status": "ONGOING",
+      "location": {
+        "room": "Executive Office Suite",
+        "floor": "6th Floor",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-EXE",
+        "coordinates": { "lat": "37.7759", "lng": "-122.4199" }
+      },
+      "category": {
+        "name": "Network Engineering",
+        "focusArea": "Wireless Connectivity Infrastructure",
+        "billingCode": "NET-WIFI-UPG"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Clean Server Rack Intake Grilles",
+      "summary": "Dust buildup cleaning across secondary hardware cluster arrays to maximize airflow.",
+      "reporterEmail": "sysadmin@company.com",
+      "contactPhone": "1-555-0199",
+      "referenceUrl": "internal-wiki.local/hardware/cleaning",
+      "status": "COMPLETED",
+      "location": {
+        "room": "Server Room 3B",
+        "floor": "3rd Floor",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-NW",
+        "coordinates": { "lat": "37.7749", "lng": "-122.4194" }
+      },
+      "category": {
+        "name": "Hardware Infrastructure",
+        "focusArea": "Preventative Maintenance",
+        "billingCode": "INFRA-2026"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Re-wire Network Patch Panels",
+      "summary": "Clean up cluttered network cabling in rack C using short custom color fiber trunks.",
+      "reporterEmail": "net-admin@company.com",
+      "contactPhone": "1-555-0104",
+      "referenceUrl": "network-topology.local/rack-c",
+      "status": "ONGOING",
+      "location": {
+        "room": "Telecom Closet 4A",
+        "floor": "4th Floor",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-TEL",
+        "coordinates": { "lat": "37.7753", "lng": "-122.4192" },
+        "category": {
+            "name": "Network Engineering",
+            "focusArea": "Cable Management Optimization",
+            "billingCode": "NET-CABLE-MGMT"
+            }
+        }
+    },
+    {
+        "id": 15,
+        "title": "Fix Breakroom Ice Machine",
+        "summary": "Clear out scaling blockages inside the internal filter module throwing warning codes.",
+        "reporterEmail": "facilities@company.com",
+        "contactPhone": "1-555-0163",
+        "referenceUrl": "appliance-repair.local/ice-maker",
+        "status": "ONGOING",
+        "location": {
+            "room": "Kitchenette Lounge",
+            "floor": "2nd Floor",
+            "building": "Annex South",
+            "zoneCode": "94102-SE",
+            "coordinates": { "lat": "37.7833", "lng": "-122.4167" }
+        },
+        "category": {
+                "name": "Office Operations",
+                "focusArea": "Breakroom Infrastructure Fixes",
+                "billingCode": "OPS-FOOD-99"
+        }
+    },
+        
+    {
+        "id": 16,
+        "title": "Replace Fire Extinguisher Units",
+        "summary": "Swap out expired pressure containment cylinders with certified fresh inventory logs.",
+        "reporterEmail": "safety-officer@company.com",
+        "contactPhone": "1-555-0177",
+        "referenceUrl": "safety-compliance.local/fire-logs",
+        "status": "COMPLETED",
+        "location": {
+            "room": "All Elevator Hubs",
+            "floor": "All Floors",
+            "building": "HQ North Tower",
+            "zoneCode": "94105-ALL",
+            "coordinates": { "lat": "37.7749", "lng": "-122.4194" }
+        },
+        "category": {
+            "name": "Workplace Safety",
+            "focusArea": "Regulatory Compliance Inspections",
+            "billingCode": "SAFE-FIRE-2026"
+            }
+    },
+    {
+        "id": 17,
+        "title": "Update Secure Entry Card Badges",
+        "summary": "Refresh RFID encryption profiles on local scanners for regional employee cross-access.",
+        "reporterEmail": "sec-ops@company.com",
+        "contactPhone": "1-555-0111",
+        "referenceUrl": "security-system.local/rfid/update",
+        "status": "ONGOING",
+        "location": {
+            "room": "Security Control Center",
+            "floor": "1st Floor Lobby",
+            "building": "HQ North Tower",
+            "zoneCode": "94105-SEC",
+            "coordinates": { "lat": "37.7750", "lng": "-122.4191" }
+        },
+        "category": {
+            "name": "Cybersecurity",
+            "focusArea": "Physical Entry Protocols",
+            "billingCode": "SEC-ACCESS-RFID"
+        }
+    },
+    {
+        "id": 18,
+        "title": "Install Lab Hazard Signage",
+        "summary": "Mount visual OSHA regulatory placard panels near laser testing spaces.","reporterEmail": "lab-tech@company.com",
+        "contactPhone": "1-555-0185",
+        "referenceUrl": "osha-standards.gov/chemical-safety",
+        "status": "COMPLETED",
+        "location": {
+            "room": "R&D Testing Bay",
+            "floor": "Basement B1",
+            "building": "Science Complex",
+            "zoneCode": "80301-LAB",
+            "coordinates": { "lat": "40.0150", "lng": "-105.2705" }
+        },
+        "category": {
+            "name": "Quality Assurance",
+            "focusArea": "Compliance Posting",
+            "billingCode": "QA-LAB-CAL"
+        }
+    },
+    {
+        "id": 19,
+        "title": "Fix Loading Dock Rolling Gate",
+        "summary": "Lubricate internal drive gear mechanics and replace frayed limiter wires.","reporterEmail": "facilities@company.com",
+        "contactPhone": "1-555-0163",
+        "referenceUrl": "gate-automation.local/logs/dock1",
+        "status": "ONGOING",
+        "location": {
+            "room": "Loading Bay Area",
+            "floor": "Ground Floor",
+            "building": "Annex South",
+            "zoneCode": "94102-DOCK",
+            "coordinates": { "lat": "37.7839", "lng": "-122.4162" }
+        },
+        "category": {
+            "name": "Facilities Management",
+            "focusArea": "Physical Access Repairs",
+            "billingCode": "INFRA-EXT-GATE"
+        }
+    },
+    {
+        "id": 20,
+        "title": "Install Office Emergency Lighting",
+        "summary": "Mount alternative backup emergency battery fixtures along escape corridors.","reporterEmail": "safety-officer@company.com",
+        "contactPhone": "1-555-0177",
+        "referenceUrl": "safety-compliance.local/lighting-specs",
+        "status": "COMPLETED",
+        "location": {
+            "room": "Stairwells A & B",
+            "floor": "Multi-Level",
+            "building": "Science Complex",
+            "zoneCode": "80301-STAIR",
+            "coordinates": { "lat": "40.0152", "lng": "-105.2701" }
+        },
+        "category": {
+            "name": "Workplace Safety",
+            "focusArea": "Emergency Preparedness Systems",
+            "billingCode": "SAFE-LIGHT-BKP"
+        }
+    }
+]
+}

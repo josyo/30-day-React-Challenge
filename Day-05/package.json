@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "mock-api": "npx json-server --watch db.json --port 4000",
     "lint": "eslint .",
     "preview": "vite preview"
   },
