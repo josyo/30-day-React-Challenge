@@ -1,5 +1,5 @@
-import "../App.css";
-import type { TaskDetailsProps } from "../types/task";
+import "../../index.css";
+import type { TaskDetailsProps } from "../../types/task";
 
 export function TaskDetails({ value, onChange }: TaskDetailsProps) {
   if (!value) return <div />;

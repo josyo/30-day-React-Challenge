@@ -1,13 +1,11 @@
 import { useState } from "react";
-import EmployeeList from "./components/TaskList";
+import EmployeeList from "./components/task-list/TaskList";
 import type { Task } from "./types/task";
-import "./App.css";
-import { TaskDetails } from "./components/TaskDetails";
+import "./index.css";
+import { TaskDetails } from "./components/task-detail/TaskDetails";
 
 export default function App() {
-  const [selectedTask, setSelectedTask] = useState<Task | null>(
-    null,
-  );
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
 
   return (
     <div className="dashboard-container">
@@ -19,9 +17,7 @@ export default function App() {
         </p>
       </header>
 
-      <main
-        className={`dashboard-grid ${selectedTask ? "has-selection" : ""}`}
-      >
+      <main className={`dashboard-grid ${selectedTask ? "has-selection" : ""}`}>
         {/* Primary Operational Section */}
         <div>
           <EmployeeList
@@ -31,10 +27,7 @@ export default function App() {
         </div>
 
         {/* Side Detail Inspection Panel */}
-        <TaskDetails
-          value={selectedTask}
-          onChange={setSelectedTask}
-        />
+        <TaskDetails value={selectedTask} onChange={setSelectedTask} />
       </main>
     </div>
   );

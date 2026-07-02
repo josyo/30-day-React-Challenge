@@ -9,12 +9,23 @@ interface ExecutionLocation {
   }
 }
 
-interface  Category {
+interface Category {
   name: string
   focusArea: string
   billingCode: string
 }
 
+export interface Subtask {
+  id: string
+  title: string
+  done: boolean
+}
+
+export interface ActivityEntry {
+  id: string
+  message: string
+  timestamp: string
+}
 
 // --- Core entity ---
 export interface Task {
@@ -25,6 +36,14 @@ export interface Task {
   contactPhone: string;
   referenceUrl: string;
   status: 'COMPLETED' | 'IN_PROGRESS' | 'TODO'
+  priority: 'LOW' | 'MEDIUM' | 'HIGH'
+  dueDate: string
+  tags: string[]
+  estimatedHours: number
+  trackedHours: number
+  assignees: string[]
+  subtasks: Subtask[]
+  activity: ActivityEntry[]
   location: ExecutionLocation;
   category: Category;
 }
@@ -38,6 +57,8 @@ export interface TaskCardProps {
   task: Task
   isSelected: boolean
   onSelectTask: (task: Task) => void
+  onDelete: (id: number) => void
+  onUpdateStatus: (task: Task, newStatus: Task['status']) => void
 }
 
 export interface TaskDetailsProps {

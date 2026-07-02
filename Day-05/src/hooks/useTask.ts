@@ -71,12 +71,12 @@ export function useFetchTask() {
 interface MutationState {
   isSubmitting: boolean
   isDeleting: boolean
-  isToggling: boolean
+  isUpdatingStatus: boolean
   error: string | null
 }
 
 type MutationAction = 
-  | {type: 'MUTATION_START'; field: 'isSubmitting' | 'isDeleting' | 'isToggling'}
+  | {type: 'MUTATION_START'; field: 'isSubmitting' | 'isDeleting' | 'isUpdatingStatus'}
   | {type: 'MUTATION_SUCCESS'}
   | {type: 'MUTATION_ERROR', payload: string}
   
@@ -84,18 +84,18 @@ type MutationAction =
 const initialAddState: MutationState = {
   isSubmitting: false,
   isDeleting: false,
-  isToggling: false,
+  isUpdatingStatus: false,
   error: null
 }
 
 function mutationReducer(state: MutationState, action: MutationAction) {
   switch(action.type) {
     case 'MUTATION_START':
-      return { ...state, isSubmitting: false, isDeleting: false, isToggling: false, error: null, [action.field]: true }
+      return { ...state, isSubmitting: false, isDeleting: false, isUpdatingStatus: false, error: null, [action.field]: true }
     case 'MUTATION_SUCCESS':
-      return { ...state, isSubmitting: false, isDeleting: false, isToggling: false, error: null }
+      return { ...state, isSubmitting: false, isDeleting: false, isUpdatingStatus: false, error: null }
     case 'MUTATION_ERROR':
-      return { ...state, isSubmitting: false, isDeleting: false, isToggling: false, error: action.payload }
+      return { ...state, isSubmitting: false, isDeleting: false, isUpdatingStatus: false, error: action.payload }
     default:
       return state
   }
@@ -104,11 +104,12 @@ function mutationReducer(state: MutationState, action: MutationAction) {
 export function useTaskMutations(options?: UseAddTaskOptions) {
   const [state, dispatch] = useReducer(mutationReducer, initialAddState)
 
+  // Add task logic
   const addTask = async (newTaskData: Omit<Task, 'id'>) => {
     try {
       dispatch({ type: 'MUTATION_START', field: 'isSubmitting' })
 
-      const response = await fetch('https://your-real-api.com/v1/employees', {
+      const response = await fetch('http://localhost:4000/tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newTaskData),
@@ -132,12 +133,12 @@ export function useTaskMutations(options?: UseAddTaskOptions) {
   };
 
   
-
+  // Delete task logic
   const deleteTask = async (id: number) => {
     try {
       dispatch({ type: 'MUTATION_START', field: 'isDeleting'})
 
-      const response = await fetch(`https://your-real-api.com/v1/task/${id}`, {
+      const response = await fetch(`http://localhost:4000/tasks/${id}`, {
         method: 'DELETE',
       });
 
@@ -152,13 +153,15 @@ export function useTaskMutations(options?: UseAddTaskOptions) {
     } 
   }
 
-  const toggleTaskStatus = async (task: Task) => {
+
+  // Update task logic
+  const updateTaskStatus = async (task: Task, newStatus: Task['status']) => {
     try{
-      dispatch({ type: 'MUTATION_START', field: 'isToggling' })
-      const response = await fetch(`https://your-real-api.com/v1/tasks/${task.id}`, {
+      dispatch({ type: 'MUTATION_START', field: 'isUpdatingStatus' })
+      const response = await fetch(`http://localhost:4000/tasks/${task.id}`, {
         method: 'PATCH', // PATCH updates a partial piece of data rather than replacing it
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ completed: !task.completed }),
+        body: JSON.stringify({ status: newStatus }),
       });
 
       if (!response.ok) {
@@ -175,10 +178,10 @@ export function useTaskMutations(options?: UseAddTaskOptions) {
   return { 
     addTask,
     deleteTask,
-    toggleTaskStatus,
+    updateTaskStatus,
     isSubmitting: state.isSubmitting,
     isDeleting: state.isDeleting,
-    isToggling: state.isToggling,
+    isUpdatingStatus: state.isUpdatingStatus,
     mutationError: state.error,
   };
 }

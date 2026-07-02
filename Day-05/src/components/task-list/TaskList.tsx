@@ -1,24 +1,23 @@
 import TaskCard from "./TaskCard";
-import "./../App.css";
-import type { TaskListProps } from "../types/task";
-import { SearchBar } from "./SearchBar";
-import { AddTaskForm } from "./TaskForm";
-import { useFetchTask, useTaskMutations } from "../hooks/useTask";
-import { useSearch } from "../hooks/useSearch";
-
+import "../../index.css"
+import type { TaskListProps } from "../../types/task";
+import { SearchBar } from "../task-list/SearchBar";
+import { AddTaskForm } from "../task-form/TaskForm";
+import { useFetchTask, useTaskMutations } from "../../hooks/useTask";
+import { useSearch } from "../../hooks/useSearch";
 
 export default function UserList({
   selectedTask,
   onSelectTask,
 }: TaskListProps) {
   const { tasks, loading, error, loadTasks } = useFetchTask();
-  const { 
+  const {
     addTask,
     deleteTask,
-    toggleTaskStatus,
+    updateTaskStatus,
     isSubmitting,
     isDeleting,
-    isToggling,
+    isUpdatingStatus,
     mutationError,
   } = useTaskMutations({
     onSuccess: () => {
@@ -49,8 +48,8 @@ export default function UserList({
       </div>
     );
   }
-  
-  return(
+
+  return (
     <div className="task-list-container">
       {/* Non-fatal mutation banner: shows errors without destroying the main UI layout */}
       {mutationError && (
@@ -74,8 +73,8 @@ export default function UserList({
               task={task}
               isSelected={selectedTask?.id === task.id}
               onSelectTask={onSelectTask}
-              onDelete={deleteTask}           // Injected from our mutation hook
-              onToggle={toggleTaskStatus}     // Injected from our mutation hook
+              onDelete={deleteTask} // Injected from our mutation hook
+              onUpdateStatus ={updateTaskStatus} // Injected from our mutation hook
             />
           ))}
         </div>
@@ -84,11 +83,11 @@ export default function UserList({
       {/* Action Forms and Global Indicators */}
       <AddTaskForm onAddTask={addTask} />
 
-      {(isSubmitting || isDeleting || isToggling) && (
+      {(isSubmitting || isDeleting || isUpdatingStatus) && (
         <p className="saving-indicator">
           {isSubmitting && "Saving new task..."}
           {isDeleting && "Deleting task..."}
-          {isToggling && "Updating task status..."}
+          {isUpdatingStatus && "Updating task status..."}
         </p>
       )}
     </div>

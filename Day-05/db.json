@@ -7,19 +7,63 @@
       "reporterEmail": "sysadmin@company.com",
       "contactPhone": "1-555-0199",
       "referenceUrl": "internal-wiki.local/hardware/cooling",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Server Room 3B",
         "floor": "3rd Floor",
         "building": "HQ North Tower",
         "zoneCode": "94105-NW",
-        "coordinates": { "lat": "37.7749", "lng": "-122.4194" }
+        "coordinates": {
+          "lat": "37.7749",
+          "lng": "-122.4194"
+        }
       },
       "category": {
         "name": "Hardware Infrastructure",
         "focusArea": "Facility Maintenance",
         "billingCode": "INFRA-2026"
-      }
+      },
+      "priority": "HIGH",
+      "dueDate": "2026-07-08",
+      "tags": [
+        "Infrastructure",
+        "Urgent"
+      ],
+      "estimatedHours": 6,
+      "trackedHours": 3.5,
+      "assignees": [
+        "Sarah Johnson",
+        "David Chen"
+      ],
+      "subtasks": [
+        {
+          "id": "st_1_1",
+          "title": "Diagnose fan controller",
+          "done": true
+        },
+        {
+          "id": "st_1_2",
+          "title": "Order replacement unit",
+          "done": true
+        },
+        {
+          "id": "st_1_3",
+          "title": "Install and test",
+          "done": false
+        }
+      ],
+      "activity": [
+        {
+          "id": "act_1_1",
+          "message": "David Chen created this task",
+          "timestamp": "2026-06-28T09:12:00Z"
+        },
+        {
+          "id": "act_1_2",
+          "message": "Sarah Johnson was assigned",
+          "timestamp": "2026-06-28T09:15:00Z"
+        }
+      ]
     },
     {
       "id": 2,
@@ -34,13 +78,51 @@
         "floor": "2nd Floor",
         "building": "Annex South",
         "zoneCode": "94102-SE",
-        "coordinates": { "lat": "37.7833", "lng": "-122.4167" }
+        "coordinates": {
+          "lat": "37.7833",
+          "lng": "-122.4167"
+        }
       },
       "category": {
         "name": "Office Operations",
         "focusArea": "Employee Wellness",
         "billingCode": "OPS-FOOD-99"
-      }
+      },
+      "priority": "LOW",
+      "dueDate": "2026-07-05",
+      "tags": [
+        "Office",
+        "Supplies"
+      ],
+      "estimatedHours": 1,
+      "trackedHours": 1,
+      "assignees": [
+        "Priya Patel"
+      ],
+      "subtasks": [
+        {
+          "id": "st_2_1",
+          "title": "Check inventory count",
+          "done": true
+        },
+        {
+          "id": "st_2_2",
+          "title": "Submit reorder request",
+          "done": true
+        }
+      ],
+      "activity": [
+        {
+          "id": "act_2_1",
+          "message": "Priya Patel created this task",
+          "timestamp": "2026-06-20T14:00:00Z"
+        },
+        {
+          "id": "act_2_2",
+          "message": "Status changed to COMPLETED",
+          "timestamp": "2026-06-21T10:30:00Z"
+        }
+      ]
     },
     {
       "id": 3,
@@ -49,19 +131,73 @@
       "reporterEmail": "sec-ops@company.com",
       "contactPhone": "1-555-0111",
       "referenceUrl": "cve.mitre.org/cgi-bin/cvename.cgi",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Virtual Dev Cluster",
         "floor": "Cloud-Hosted",
         "building": "AWS US-East-1",
         "zoneCode": "VPC-CORE",
-        "coordinates": { "lat": "38.0328", "lng": "-78.4821" }
+        "coordinates": {
+          "lat": "38.0328",
+          "lng": "-78.4821"
+        }
       },
       "category": {
         "name": "Cybersecurity",
         "focusArea": "Threat Remediation",
         "billingCode": "SEC-PATCH-A"
-      }
+      },
+      "priority": "HIGH",
+      "dueDate": "2026-07-03",
+      "tags": [
+        "Security",
+        "Critical"
+      ],
+      "estimatedHours": 10,
+      "trackedHours": 6,
+      "assignees": [
+        "Mike Reyes",
+        "Amara Okafor"
+      ],
+      "subtasks": [
+        {
+          "id": "st_3_1",
+          "title": "Review CVE advisory",
+          "done": true
+        },
+        {
+          "id": "st_3_2",
+          "title": "Test patch in staging",
+          "done": true
+        },
+        {
+          "id": "st_3_3",
+          "title": "Deploy to production",
+          "done": false
+        },
+        {
+          "id": "st_3_4",
+          "title": "Verify remediation",
+          "done": false
+        }
+      ],
+      "activity": [
+        {
+          "id": "act_3_1",
+          "message": "Mike Reyes created this task",
+          "timestamp": "2026-06-25T08:00:00Z"
+        },
+        {
+          "id": "act_3_2",
+          "message": "Priority set to HIGH",
+          "timestamp": "2026-06-25T08:02:00Z"
+        },
+        {
+          "id": "act_3_3",
+          "message": "Amara Okafor was assigned",
+          "timestamp": "2026-06-25T09:30:00Z"
+        }
+      ]
     },
     {
       "id": 4,
@@ -76,13 +212,45 @@
         "floor": "Basement B1",
         "building": "Science Complex",
         "zoneCode": "80301-LAB",
-        "coordinates": { "lat": "40.0150", "lng": "-105.2705" }
+        "coordinates": {
+          "lat": "40.0150",
+          "lng": "-105.2705"
+        }
       },
       "category": {
         "name": "Quality Assurance",
         "focusArea": "Equipment Testing",
         "billingCode": "QA-LAB-CAL"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-20",
+      "tags": [
+        "QA"
+      ],
+      "estimatedHours": 4,
+      "trackedHours": 4,
+      "assignees": [
+        "David Chen"
+      ],
+      "subtasks": [
+        {
+          "id": "st_4_1",
+          "title": "Run calibration sequence",
+          "done": true
+        }
+      ],
+      "activity": [
+        {
+          "id": "act_4_1",
+          "message": "David Chen created this task",
+          "timestamp": "2026-06-15T11:00:00Z"
+        },
+        {
+          "id": "act_4_2",
+          "message": "Status changed to COMPLETED",
+          "timestamp": "2026-06-16T13:45:00Z"
+        }
+      ]
     },
     {
       "id": 5,
@@ -91,19 +259,51 @@
       "reporterEmail": "reception@company.com",
       "contactPhone": "1-555-0100",
       "referenceUrl": "internal-maps.local/kiosk/v2",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Main Reception",
         "floor": "1st Floor Lobby",
         "building": "HQ North Tower",
         "zoneCode": "94105-LBY",
-        "coordinates": { "lat": "37.7751", "lng": "-122.4190" }
+        "coordinates": {
+          "lat": "37.7751",
+          "lng": "-122.4190"
+        }
       },
       "category": {
         "name": "Digital Signage",
         "focusArea": "Visitor Experience",
         "billingCode": "OPS-SIGN-44"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-10",
+      "tags": [
+        "Facilities"
+      ],
+      "estimatedHours": 3,
+      "trackedHours": 1,
+      "assignees": [
+        "Sarah Johnson"
+      ],
+      "subtasks": [
+        {
+          "id": "st_5_1",
+          "title": "Design new directory layout",
+          "done": true
+        },
+        {
+          "id": "st_5_2",
+          "title": "Flash kiosk firmware",
+          "done": false
+        }
+      ],
+      "activity": [
+        {
+          "id": "act_5_1",
+          "message": "Sarah Johnson created this task",
+          "timestamp": "2026-06-29T10:00:00Z"
+        }
+      ]
     },
     {
       "id": 6,
@@ -112,19 +312,52 @@
       "reporterEmail": "facilities@company.com",
       "contactPhone": "1-555-0163",
       "referenceUrl": "power-systems.local/maintenance",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Power Utility Vault",
         "floor": "Exterior Yard",
         "building": "Annex South",
         "zoneCode": "94102-PWR",
-        "coordinates": { "lat": "37.7831", "lng": "-122.4165" }
+        "coordinates": {
+          "lat": "37.7831",
+          "lng": "-122.4165"
+        }
       },
       "category": {
         "name": "Facilities Management",
         "focusArea": "Disaster Recovery",
         "billingCode": "INFRA-PWR-BKP"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-12",
+      "tags": [
+        "Facilities",
+        "Power"
+      ],
+      "estimatedHours": 5,
+      "trackedHours": 2,
+      "assignees": [
+        "Amara Okafor"
+      ],
+      "subtasks": [
+        {
+          "id": "st_6_1",
+          "title": "Order replacement battery",
+          "done": true
+        },
+        {
+          "id": "st_6_2",
+          "title": "Schedule swap window",
+          "done": false
+        }
+      ],
+      "activity": [
+        {
+          "id": "act_6_1",
+          "message": "Amara Okafor created this task",
+          "timestamp": "2026-06-27T15:00:00Z"
+        }
+      ]
     },
     {
       "id": 7,
@@ -139,13 +372,34 @@
         "floor": "2nd Floor Bridge",
         "building": "HQ North Tower",
         "zoneCode": "94105-ATR",
-        "coordinates": { "lat": "37.7745", "lng": "-122.4198" }
+        "coordinates": {
+          "lat": "37.7745",
+          "lng": "-122.4198"
+        }
       },
       "category": {
         "name": "Brand Design",
         "focusArea": "Physical Marketing Assets",
         "billingCode": "MKT-PRINT-03"
-      }
+      },
+      "priority": "LOW",
+      "dueDate": "2026-07-14",
+      "tags": [
+        "Brand Design"
+      ],
+      "estimatedHours": 3,
+      "trackedHours": 3,
+      "assignees": [
+        "Priya Patel"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_7_1",
+          "message": "Priya Patel created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 8,
@@ -154,19 +408,40 @@
       "reporterEmail": "fin-leads@company.com",
       "contactPhone": "1-555-0155",
       "referenceUrl": "printer-admin.local/node/fin-prn01",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Accounting Suite",
         "floor": "4th Floor",
         "building": "Annex South",
         "zoneCode": "94102-FIN",
-        "coordinates": { "lat": "37.7835", "lng": "-122.4169" }
+        "coordinates": {
+          "lat": "37.7835",
+          "lng": "-122.4169"
+        }
       },
       "category": {
         "name": "Desktop Support",
         "focusArea": "Internal Office Hardware",
         "billingCode": "IT-HELP-PRN"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-09",
+      "tags": [
+        "Desktop Support"
+      ],
+      "estimatedHours": 2,
+      "trackedHours": 0.8,
+      "assignees": [
+        "David Chen"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_8_1",
+          "message": "David Chen created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 9,
@@ -181,13 +456,34 @@
         "floor": "5th Floor",
         "building": "HQ North Tower",
         "zoneCode": "94105-BR5",
-        "coordinates": { "lat": "37.7755", "lng": "-122.4191" }
+        "coordinates": {
+          "lat": "37.7755",
+          "lng": "-122.4191"
+        }
       },
       "category": {
         "name": "Audio Visual",
         "focusArea": "Collaboration Systems",
         "billingCode": "AV-CONF-ROOM"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-11",
+      "tags": [
+        "Audio Visual"
+      ],
+      "estimatedHours": 4,
+      "trackedHours": 4,
+      "assignees": [
+        "Amara Okafor"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_9_1",
+          "message": "Amara Okafor created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 10,
@@ -196,19 +492,40 @@
       "reporterEmail": "roofing@company.com",
       "contactPhone": "1-555-0149",
       "referenceUrl": "weather-alerts.local/weekly-outlook",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Main Roof Deck",
         "floor": "Roof Level",
         "building": "Science Complex",
         "zoneCode": "80301-ROOF",
-        "coordinates": { "lat": "40.0155", "lng": "-105.2709" }
+        "coordinates": {
+          "lat": "40.0155",
+          "lng": "-105.2709"
+        }
       },
       "category": {
         "name": "Facilities Management",
         "focusArea": "Weatherproofing Infrastructure",
         "billingCode": "INFRA-EXT-DRAIN"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-18",
+      "tags": [
+        "Facilities Management"
+      ],
+      "estimatedHours": 3,
+      "trackedHours": 1.2,
+      "assignees": [
+        "Sarah Johnson"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_10_1",
+          "message": "Sarah Johnson created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 11,
@@ -223,13 +540,34 @@
         "floor": "Basement B2",
         "building": "Annex South",
         "zoneCode": "94102-B2",
-        "coordinates": { "lat": "37.7830", "lng": "-122.4160" }
+        "coordinates": {
+          "lat": "37.7830",
+          "lng": "-122.4160"
+        }
       },
       "category": {
         "name": "Asset Management",
         "focusArea": "E-Waste Compliance",
         "billingCode": "IT-LOGI-RECYCLE"
-      }
+      },
+      "priority": "LOW",
+      "dueDate": "2026-07-06",
+      "tags": [
+        "Asset Management"
+      ],
+      "estimatedHours": 5,
+      "trackedHours": 5,
+      "assignees": [
+        "Mike Reyes"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_11_1",
+          "message": "Mike Reyes created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 12,
@@ -238,19 +576,40 @@
       "reporterEmail": "net-admin@company.com",
       "contactPhone": "1-555-0104",
       "referenceUrl": "unifi-controller.local/site/hq",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Executive Office Suite",
         "floor": "6th Floor",
         "building": "HQ North Tower",
         "zoneCode": "94105-EXE",
-        "coordinates": { "lat": "37.7759", "lng": "-122.4199" }
+        "coordinates": {
+          "lat": "37.7759",
+          "lng": "-122.4199"
+        }
       },
       "category": {
         "name": "Network Engineering",
         "focusArea": "Wireless Connectivity Infrastructure",
         "billingCode": "NET-WIFI-UPG"
-      }
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-25",
+      "tags": [
+        "Network Engineering"
+      ],
+      "estimatedHours": 8,
+      "trackedHours": 3.2,
+      "assignees": [
+        "Priya Patel"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_12_1",
+          "message": "Priya Patel created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 13,
@@ -265,13 +624,34 @@
         "floor": "3rd Floor",
         "building": "HQ North Tower",
         "zoneCode": "94105-NW",
-        "coordinates": { "lat": "37.7749", "lng": "-122.4194" }
+        "coordinates": {
+          "lat": "37.7749",
+          "lng": "-122.4194"
+        }
       },
       "category": {
         "name": "Hardware Infrastructure",
         "focusArea": "Preventative Maintenance",
         "billingCode": "INFRA-2026"
-      }
+      },
+      "priority": "LOW",
+      "dueDate": "2026-07-07",
+      "tags": [
+        "Hardware Infrastructure"
+      ],
+      "estimatedHours": 2,
+      "trackedHours": 2,
+      "assignees": [
+        "David Chen"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_13_1",
+          "message": "David Chen created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
       "id": 14,
@@ -280,143 +660,292 @@
       "reporterEmail": "net-admin@company.com",
       "contactPhone": "1-555-0104",
       "referenceUrl": "network-topology.local/rack-c",
-      "status": "ONGOING",
+      "status": "IN_PROGRESS",
       "location": {
         "room": "Telecom Closet 4A",
         "floor": "4th Floor",
         "building": "HQ North Tower",
         "zoneCode": "94105-TEL",
-        "coordinates": { "lat": "37.7753", "lng": "-122.4192" },
-        "category": {
-            "name": "Network Engineering",
-            "focusArea": "Cable Management Optimization",
-            "billingCode": "NET-CABLE-MGMT"
-            }
+        "coordinates": {
+          "lat": "37.7753",
+          "lng": "-122.4192"
         }
+      },
+      "category": {
+        "name": "Network Engineering",
+        "focusArea": "Cable Management Optimization",
+        "billingCode": "NET-CABLE-MGMT"
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-16",
+      "tags": [
+        "Network Engineering"
+      ],
+      "estimatedHours": 6,
+      "trackedHours": 2.4,
+      "assignees": [
+        "Amara Okafor"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_14_1",
+          "message": "Amara Okafor created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
-        "id": 15,
-        "title": "Fix Breakroom Ice Machine",
-        "summary": "Clear out scaling blockages inside the internal filter module throwing warning codes.",
-        "reporterEmail": "facilities@company.com",
-        "contactPhone": "1-555-0163",
-        "referenceUrl": "appliance-repair.local/ice-maker",
-        "status": "ONGOING",
-        "location": {
-            "room": "Kitchenette Lounge",
-            "floor": "2nd Floor",
-            "building": "Annex South",
-            "zoneCode": "94102-SE",
-            "coordinates": { "lat": "37.7833", "lng": "-122.4167" }
-        },
-        "category": {
-                "name": "Office Operations",
-                "focusArea": "Breakroom Infrastructure Fixes",
-                "billingCode": "OPS-FOOD-99"
+      "id": 15,
+      "title": "Fix Breakroom Ice Machine",
+      "summary": "Clear out scaling blockages inside the internal filter module throwing warning codes.",
+      "reporterEmail": "facilities@company.com",
+      "contactPhone": "1-555-0163",
+      "referenceUrl": "appliance-repair.local/ice-maker",
+      "status": "IN_PROGRESS",
+      "location": {
+        "room": "Kitchenette Lounge",
+        "floor": "2nd Floor",
+        "building": "Annex South",
+        "zoneCode": "94102-SE",
+        "coordinates": {
+          "lat": "37.7833",
+          "lng": "-122.4167"
         }
-    },
-        
-    {
-        "id": 16,
-        "title": "Replace Fire Extinguisher Units",
-        "summary": "Swap out expired pressure containment cylinders with certified fresh inventory logs.",
-        "reporterEmail": "safety-officer@company.com",
-        "contactPhone": "1-555-0177",
-        "referenceUrl": "safety-compliance.local/fire-logs",
-        "status": "COMPLETED",
-        "location": {
-            "room": "All Elevator Hubs",
-            "floor": "All Floors",
-            "building": "HQ North Tower",
-            "zoneCode": "94105-ALL",
-            "coordinates": { "lat": "37.7749", "lng": "-122.4194" }
-        },
-        "category": {
-            "name": "Workplace Safety",
-            "focusArea": "Regulatory Compliance Inspections",
-            "billingCode": "SAFE-FIRE-2026"
-            }
-    },
-    {
-        "id": 17,
-        "title": "Update Secure Entry Card Badges",
-        "summary": "Refresh RFID encryption profiles on local scanners for regional employee cross-access.",
-        "reporterEmail": "sec-ops@company.com",
-        "contactPhone": "1-555-0111",
-        "referenceUrl": "security-system.local/rfid/update",
-        "status": "ONGOING",
-        "location": {
-            "room": "Security Control Center",
-            "floor": "1st Floor Lobby",
-            "building": "HQ North Tower",
-            "zoneCode": "94105-SEC",
-            "coordinates": { "lat": "37.7750", "lng": "-122.4191" }
-        },
-        "category": {
-            "name": "Cybersecurity",
-            "focusArea": "Physical Entry Protocols",
-            "billingCode": "SEC-ACCESS-RFID"
+      },
+      "category": {
+        "name": "Office Operations",
+        "focusArea": "Breakroom Infrastructure Fixes",
+        "billingCode": "OPS-FOOD-99"
+      },
+      "priority": "LOW",
+      "dueDate": "2026-07-13",
+      "tags": [
+        "Office Operations"
+      ],
+      "estimatedHours": 2,
+      "trackedHours": 0.8,
+      "assignees": [
+        "Sarah Johnson"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_15_1",
+          "message": "Sarah Johnson created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
         }
+      ]
     },
     {
-        "id": 18,
-        "title": "Install Lab Hazard Signage",
-        "summary": "Mount visual OSHA regulatory placard panels near laser testing spaces.","reporterEmail": "lab-tech@company.com",
-        "contactPhone": "1-555-0185",
-        "referenceUrl": "osha-standards.gov/chemical-safety",
-        "status": "COMPLETED",
-        "location": {
-            "room": "R&D Testing Bay",
-            "floor": "Basement B1",
-            "building": "Science Complex",
-            "zoneCode": "80301-LAB",
-            "coordinates": { "lat": "40.0150", "lng": "-105.2705" }
-        },
-        "category": {
-            "name": "Quality Assurance",
-            "focusArea": "Compliance Posting",
-            "billingCode": "QA-LAB-CAL"
+      "id": 16,
+      "title": "Replace Fire Extinguisher Units",
+      "summary": "Swap out expired pressure containment cylinders with certified fresh inventory logs.",
+      "reporterEmail": "safety-officer@company.com",
+      "contactPhone": "1-555-0177",
+      "referenceUrl": "safety-compliance.local/fire-logs",
+      "status": "COMPLETED",
+      "location": {
+        "room": "All Elevator Hubs",
+        "floor": "All Floors",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-ALL",
+        "coordinates": {
+          "lat": "37.7749",
+          "lng": "-122.4194"
         }
+      },
+      "category": {
+        "name": "Workplace Safety",
+        "focusArea": "Regulatory Compliance Inspections",
+        "billingCode": "SAFE-FIRE-2026"
+      },
+      "priority": "HIGH",
+      "dueDate": "2026-07-02",
+      "tags": [
+        "Workplace Safety"
+      ],
+      "estimatedHours": 4,
+      "trackedHours": 4,
+      "assignees": [
+        "Mike Reyes"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_16_1",
+          "message": "Mike Reyes created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
-        "id": 19,
-        "title": "Fix Loading Dock Rolling Gate",
-        "summary": "Lubricate internal drive gear mechanics and replace frayed limiter wires.","reporterEmail": "facilities@company.com",
-        "contactPhone": "1-555-0163",
-        "referenceUrl": "gate-automation.local/logs/dock1",
-        "status": "ONGOING",
-        "location": {
-            "room": "Loading Bay Area",
-            "floor": "Ground Floor",
-            "building": "Annex South",
-            "zoneCode": "94102-DOCK",
-            "coordinates": { "lat": "37.7839", "lng": "-122.4162" }
-        },
-        "category": {
-            "name": "Facilities Management",
-            "focusArea": "Physical Access Repairs",
-            "billingCode": "INFRA-EXT-GATE"
+      "id": 17,
+      "title": "Update Secure Entry Card Badges",
+      "summary": "Refresh RFID encryption profiles on local scanners for regional employee cross-access.",
+      "reporterEmail": "sec-ops@company.com",
+      "contactPhone": "1-555-0111",
+      "referenceUrl": "security-system.local/rfid/update",
+      "status": "IN_PROGRESS",
+      "location": {
+        "room": "Security Control Center",
+        "floor": "1st Floor Lobby",
+        "building": "HQ North Tower",
+        "zoneCode": "94105-SEC",
+        "coordinates": {
+          "lat": "37.7750",
+          "lng": "-122.4191"
         }
+      },
+      "category": {
+        "name": "Cybersecurity",
+        "focusArea": "Physical Entry Protocols",
+        "billingCode": "SEC-ACCESS-RFID"
+      },
+      "priority": "HIGH",
+      "dueDate": "2026-07-15",
+      "tags": [
+        "Cybersecurity"
+      ],
+      "estimatedHours": 5,
+      "trackedHours": 2.0,
+      "assignees": [
+        "Priya Patel"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_17_1",
+          "message": "Priya Patel created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     },
     {
-        "id": 20,
-        "title": "Install Office Emergency Lighting",
-        "summary": "Mount alternative backup emergency battery fixtures along escape corridors.","reporterEmail": "safety-officer@company.com",
-        "contactPhone": "1-555-0177",
-        "referenceUrl": "safety-compliance.local/lighting-specs",
-        "status": "COMPLETED",
-        "location": {
-            "room": "Stairwells A & B",
-            "floor": "Multi-Level",
-            "building": "Science Complex",
-            "zoneCode": "80301-STAIR",
-            "coordinates": { "lat": "40.0152", "lng": "-105.2701" }
-        },
-        "category": {
-            "name": "Workplace Safety",
-            "focusArea": "Emergency Preparedness Systems",
-            "billingCode": "SAFE-LIGHT-BKP"
+      "id": 18,
+      "title": "Install Lab Hazard Signage",
+      "summary": "Mount visual OSHA regulatory placard panels near laser testing spaces.",
+      "reporterEmail": "lab-tech@company.com",
+      "contactPhone": "1-555-0185",
+      "referenceUrl": "osha-standards.gov/chemical-safety",
+      "status": "COMPLETED",
+      "location": {
+        "room": "R&D Testing Bay",
+        "floor": "Basement B1",
+        "building": "Science Complex",
+        "zoneCode": "80301-LAB",
+        "coordinates": {
+          "lat": "40.0150",
+          "lng": "-105.2705"
         }
+      },
+      "category": {
+        "name": "Quality Assurance",
+        "focusArea": "Compliance Posting",
+        "billingCode": "QA-LAB-CAL"
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-04",
+      "tags": [
+        "Quality Assurance"
+      ],
+      "estimatedHours": 2,
+      "trackedHours": 2,
+      "assignees": [
+        "David Chen"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_18_1",
+          "message": "David Chen created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Fix Loading Dock Rolling Gate",
+      "summary": "Lubricate internal drive gear mechanics and replace frayed limiter wires.",
+      "reporterEmail": "facilities@company.com",
+      "contactPhone": "1-555-0163",
+      "referenceUrl": "gate-automation.local/logs/dock1",
+      "status": "IN_PROGRESS",
+      "location": {
+        "room": "Loading Bay Area",
+        "floor": "Ground Floor",
+        "building": "Annex South",
+        "zoneCode": "94102-DOCK",
+        "coordinates": {
+          "lat": "37.7839",
+          "lng": "-122.4162"
+        }
+      },
+      "category": {
+        "name": "Facilities Management",
+        "focusArea": "Physical Access Repairs",
+        "billingCode": "INFRA-EXT-GATE"
+      },
+      "priority": "MEDIUM",
+      "dueDate": "2026-07-19",
+      "tags": [
+        "Facilities Management"
+      ],
+      "estimatedHours": 3,
+      "trackedHours": 1.2,
+      "assignees": [
+        "Amara Okafor"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_19_1",
+          "message": "Amara Okafor created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Install Office Emergency Lighting",
+      "summary": "Mount alternative backup emergency battery fixtures along escape corridors.",
+      "reporterEmail": "safety-officer@company.com",
+      "contactPhone": "1-555-0177",
+      "referenceUrl": "safety-compliance.local/lighting-specs",
+      "status": "COMPLETED",
+      "location": {
+        "room": "Stairwells A & B",
+        "floor": "Multi-Level",
+        "building": "Science Complex",
+        "zoneCode": "80301-STAIR",
+        "coordinates": {
+          "lat": "40.0152",
+          "lng": "-105.2701"
+        }
+      },
+      "category": {
+        "name": "Workplace Safety",
+        "focusArea": "Emergency Preparedness Systems",
+        "billingCode": "SAFE-LIGHT-BKP"
+      },
+      "priority": "HIGH",
+      "dueDate": "2026-07-01",
+      "tags": [
+        "Workplace Safety"
+      ],
+      "estimatedHours": 6,
+      "trackedHours": 6,
+      "assignees": [
+        "Sarah Johnson"
+      ],
+      "subtasks": [],
+      "activity": [
+        {
+          "id": "act_20_1",
+          "message": "Sarah Johnson created this task",
+          "timestamp": "2026-06-18T09:00:00Z"
+        }
+      ]
     }
-]
+  ]
 }

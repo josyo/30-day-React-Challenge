@@ -1,5 +1,5 @@
-import type { SearchBarProps } from "../types/task";
-import "../App.css";
+import type { SearchBarProps } from "../../types/task";
+import "../../index.css";
 
 export function SearchBar({ value, onChange }: SearchBarProps) {
   return (
