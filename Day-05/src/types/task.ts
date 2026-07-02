@@ -75,3 +75,8 @@ export interface SearchBarProps {
 export interface AddTaskFormProps {
   onAddTask: (task: Omit<Task, 'id'>) => void
 }
+
+export interface StatusDropdownProps {
+    task: Task;
+    onUpdateStatus: (task: Task, mewStatus: Task["status"]) => void
+}

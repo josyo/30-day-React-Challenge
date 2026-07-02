@@ -42,7 +42,7 @@ export function useFetchTask() {
     const loadTasks = useCallback(async () => {
         try {
             dispatch({ type: 'FETCH_START' })
-            const response = await fetch('https://jsonplaceholder.typicode.com/users');
+            const response = await fetch('http://localhost:4000/tasks');
             
             if (!response.ok) {
                 throw new Error('Failed to load tasks');
