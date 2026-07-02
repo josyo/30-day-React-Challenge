@@ -1,26 +1,21 @@
 import React from "react";
-import type { Task } from "../../types/task";
+import type { TaskCardProps } from "../../types/task";
 
-interface TaskCardProps {
-  task: Task;
-  isSelected: boolean;
-  onSelectTask: (task: Task) => void;
-  onDelete: (id: number) => Promise<void>;
-  onToggle: (task: Task) => Promise<void>;
-}
+const STATUS_LABELS: Record<string, string> = {
+  TODO: "To Do",
+  IN_PROGRESS: "In Progress",
+  COMPLETED: "Completed",
+};
 
 export default function TaskCard({
   task,
   isSelected,
   onSelectTask,
   onDelete,
-  onToggle,
+  onUpdateStatus,
+  isUpdatingStatus,
 }: TaskCardProps) {
-  // Prevent card-selection click when hitting action elements
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.stopPropagation();
-    onToggle(task);
-  };
+  const isCompleted = task.status === "COMPLETED";
 
   const handleDeleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -29,38 +24,51 @@ export default function TaskCard({
     }
   };
 
+  const handleQuickCompleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    // Completed -> reopen to TODO. Anything else -> mark COMPLETED.
+    onUpdateStatus(task, isCompleted ? "TODO" : "COMPLETED");
+  };
+
   return (
     <div
-      className={`task-card ${isSelected ? "selected" : ""} ${task.completed ? "completed" : ""}`}
+      className={`task-card ${isSelected ? "selected" : ""} ${
+        isCompleted ? "completed" : ""
+      }`}
       onClick={() => onSelectTask(task)}
       style={{
         border: isSelected
           ? "2px solid var(--primary-color)"
           : "1px solid var(--border-color)",
-        opacity: task.completed ? 0.7 : 1,
+        opacity: isCompleted ? 0.7 : 1,
       }}
     >
       <div className="task-card-left">
-        <input
-          type="checkbox"
-          checked={task.completed}
-          onChange={handleCheckboxChange}
-          aria-label={`Mark "${task.title}" as ${task.completed ? "incomplete" : "complete"}`}
-        />
+        <span className={`status-badge status-${task.status.toLowerCase()}`}>
+          {STATUS_LABELS[task.status]}
+        </span>
         <div className="task-details">
-          <h4
-            style={{ textDecoration: task.completed ? "line-through" : "none" }}
-          >
+          <h4 style={{ textDecoration: isCompleted ? "line-through" : "none" }}>
             {task.title}
           </h4>
-          {/* If your JSONPlaceholder data maps userIds, we can display them here */}
-          {task.userId && (
-            <span className="task-meta">Assigned to ID: {task.userId}</span>
-          )}
+          <span className="task-meta">{task.category.name}</span>
         </div>
       </div>
 
       <div className="task-card-right">
+        <button
+          className="quick-complete-btn"
+          onClick={handleQuickCompleteClick}
+          disabled={isUpdatingStatus}
+          aria-label={
+            isCompleted
+              ? `Reopen task "${task.title}"`
+              : `Mark task "${task.title}" as complete`
+          }
+        >
+          {isUpdatingStatus ? "..." : isCompleted ? "↺" : "✓"}
+        </button>
+
         <button
           className="delete-task-btn"
           onClick={handleDeleteClick}

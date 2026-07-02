@@ -75,6 +75,7 @@ export default function UserList({
               onSelectTask={onSelectTask}
               onDelete={deleteTask} // Injected from our mutation hook
               onUpdateStatus ={updateTaskStatus} // Injected from our mutation hook
+              isUpdatingStatus={isUpdatingStatus}
             />
           ))}
         </div>

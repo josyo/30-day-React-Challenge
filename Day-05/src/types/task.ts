@@ -59,6 +59,7 @@ export interface TaskCardProps {
   onSelectTask: (task: Task) => void
   onDelete: (id: number) => void
   onUpdateStatus: (task: Task, newStatus: Task['status']) => void
+  isUpdatingStatus: boolean
 }
 
 export interface TaskDetailsProps {
